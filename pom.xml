@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.hsmsim</groupId>
+    <artifactId>hsm-simulator</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+    <name>HSMSimulator</name>
+    <description>
+        Local stand-in for a SafeNet Luna HSM, for developing any Spring Boot service that
+        loads the Luna JCE provider. Not a real HSM - for development use only, when there is
+        no network path to the actual Luna appliance. Not affiliated with or endorsed by
+        SafeNet/Thales; it only reimplements the small slice of the JCA Provider/KeyStore
+        contract such a service calls, under the same class name, so it can be dropped in via
+        config alone.
+    </description>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <finalName>hsm-simulator-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
